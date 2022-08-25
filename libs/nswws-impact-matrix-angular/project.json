@@ -1,0 +1,25 @@
+{
+  "projectType": "library",
+  "sourceRoot": "libs/nswws-impact-matrix-angular/src",
+  "prefix": "nx-test",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/nswws-impact-matrix-angular"],
+      "options": {
+        "jestConfig": "libs/nswws-impact-matrix-angular/jest.config.ts",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/nswws-impact-matrix-angular/**/*.ts",
+          "libs/nswws-impact-matrix-angular/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": []
+}

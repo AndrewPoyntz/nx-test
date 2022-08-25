@@ -1,0 +1,56 @@
+:host {
+  display: block;
+}
+
+.impactMatrix {
+  width: 100%;
+  height: 100%;
+}
+table {
+  width: inherit;
+  height: inherit;
+  border-spacing: 1px;
+}
+.likelihoodArrow {
+  width: 20%;
+  vertical-align: top;
+}
+.likelihoodArrow img {
+  height: 80%;
+  width: 85%;
+}
+
+.impactArrow img {
+  width: 85%;
+}
+.cell {
+  border: 1px solid #a1a0aaff;
+  width: 20%;
+  height: 100%;
+  text-align: center;
+  padding: 10% 1%;
+  display: inline-block;
+  margin: 0 0.1%;
+  font-weight: bold;
+  position: relative;
+}
+.green {
+  background-color: #a3d700;
+}
+.yellow {
+  background-color: #ffe923;
+}
+.amber {
+  background-color: #ff9900;
+}
+.red {
+  background-color: #cc0033;
+  color: white;
+}
+.cell img {
+  position: absolute;
+  width: 50%;
+  height: 50%;
+  top: 25%;
+  left: 25%;
+}

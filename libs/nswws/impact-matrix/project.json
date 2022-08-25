@@ -1,0 +1,66 @@
+{
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/nswws/impact-matrix/src",
+  "projectType": "library",
+  "generators": {
+    "@nxext/stencil:component": {
+      "style": "scss"
+    }
+  },
+  "tags": [],
+  "targets": {
+    "test": {
+      "executor": "@nxext/stencil:test",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "projectType": "library",
+        "tsConfig": "libs/nswws/impact-matrix/tsconfig.lib.json",
+        "configPath": "libs/nswws/impact-matrix/stencil.config.ts",
+        "outputPath": "dist/libs/nswws/impact-matrix"
+      }
+    },
+    "build": {
+      "executor": "@nxext/stencil:build",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "projectType": "library",
+        "tsConfig": "libs/nswws/impact-matrix/tsconfig.lib.json",
+        "configPath": "libs/nswws/impact-matrix/stencil.config.ts",
+        "outputPath": "dist/libs/nswws/impact-matrix"
+      },
+      "configurations": {
+        "production": {
+          "dev": false,
+          "prod": true
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nxext/stencil:serve",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "projectType": "library",
+        "tsConfig": "libs/nswws/impact-matrix/tsconfig.lib.json",
+        "configPath": "libs/nswws/impact-matrix/stencil.config.ts",
+        "outputPath": "dist/libs/nswws/impact-matrix"
+      }
+    },
+    "e2e": {
+      "executor": "@nxext/stencil:e2e",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "projectType": "library",
+        "tsConfig": "libs/nswws/impact-matrix/tsconfig.lib.json",
+        "configPath": "libs/nswws/impact-matrix/stencil.config.ts",
+        "outputPath": "dist/libs/nswws/impact-matrix"
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": "libs/nswws/impact-matrix/**/*.{ts,tsx}"
+      }
+    }
+  }
+}

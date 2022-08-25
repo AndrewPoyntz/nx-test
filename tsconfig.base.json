@@ -1,0 +1,31 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "rootDir": ".",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "es2015",
+    "module": "esnext",
+    "lib": ["es2017", "dom"],
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@nx-test/nswws-imact-matrix/*": [
+        "dist/libs/nswws-imact-matrix/dist/components/*"
+      ],
+      "@nx-test/nswws-imact-matrix/loader": [
+        "dist/libs/nswws-imact-matrix/loader"
+      ],
+      "@nx-test/nswws-impact-matrix": ["dist/libs/nswws/impact-matrix"],
+      "@nx-test/nswws-impact-matrix-angular": [
+        "libs/nswws-impact-matrix-angular/src/index.ts"
+      ]
+    }
+  },
+  "exclude": ["node_modules", "tmp"]
+}

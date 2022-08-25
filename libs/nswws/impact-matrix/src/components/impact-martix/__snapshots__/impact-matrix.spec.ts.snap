@@ -1,0 +1,89 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`my-component renders 1`] = `
+<impact-matrix>
+  <mock:shadow-root>
+    <div class="impactMatrix">
+      <table>
+        <tr>
+          <td class="likelihoodArrow" rowspan="5">
+            <img src="/assets/likelihood_arrow.svg">
+          </td>
+          <td class="cell green"></td>
+          <td class="cell yellow"></td>
+          <td class="amber cell"></td>
+          <td class="cell red"></td>
+        </tr>
+        <tr>
+          <td class="cell green"></td>
+          <td class="cell yellow"></td>
+          <td class="amber cell"></td>
+          <td class="amber cell"></td>
+        </tr>
+        <tr>
+          <td class="cell green"></td>
+          <td class="cell green"></td>
+          <td class="cell yellow"></td>
+          <td class="amber cell"></td>
+        </tr>
+        <tr>
+          <td class="cell green"></td>
+          <td class="cell green"></td>
+          <td class="cell yellow"></td>
+          <td class="cell yellow"></td>
+        </tr>
+        <tr>
+          <td class="impactArrow" colspan="4">
+            <img src="/assets/impact_arrow.svg">
+          </td>
+        </tr>
+      </table>
+    </div>
+  </mock:shadow-root>
+</impact-matrix>
+`;
+
+exports[`my-component renders with values 1`] = `
+<impact-matrix impact="2" likelihood="4">
+  <mock:shadow-root>
+    <div class="impactMatrix">
+      <table>
+        <tr>
+          <td class="likelihoodArrow" rowspan="5">
+            <img src="/assets/likelihood_arrow.svg">
+          </td>
+          <td class="cell green"></td>
+          <td class="cell yellow">
+            <img src="/assets/tick.svg">
+          </td>
+          <td class="amber cell"></td>
+          <td class="cell red"></td>
+        </tr>
+        <tr>
+          <td class="cell green"></td>
+          <td class="cell yellow"></td>
+          <td class="amber cell"></td>
+          <td class="amber cell"></td>
+        </tr>
+        <tr>
+          <td class="cell green"></td>
+          <td class="cell green"></td>
+          <td class="cell yellow"></td>
+          <td class="amber cell"></td>
+        </tr>
+        <tr>
+          <td class="cell green"></td>
+          <td class="cell green"></td>
+          <td class="cell yellow"></td>
+          <td class="cell yellow"></td>
+        </tr>
+        <tr>
+          <td class="impactArrow" colspan="4">
+            <img src="/assets/impact_arrow.svg">
+          </td>
+        </tr>
+      </table>
+    </div>
+  </mock:shadow-root>
+</impact-matrix>
+`;

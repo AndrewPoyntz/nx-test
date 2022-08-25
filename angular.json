@@ -1,0 +1,10 @@
+{
+  "$schema": "./node_modules/nx/schemas/workspace-schema.json",
+  "version": 2,
+  "projects": {
+    "docs": "apps/docs",
+    "docs-e2e": "apps/docs-e2e",
+    "nswws-impact-matrix": "libs/nswws/impact-matrix",
+    "nswws-impact-matrix-angular": "libs/nswws-impact-matrix-angular"
+  }
+}
