@@ -7,4 +7,6 @@ import {Component} from '@angular/core';
 })
 export class AppComponent {
   title = 'docs';
+  impact = 2;
+  likelihood = 4;
 }

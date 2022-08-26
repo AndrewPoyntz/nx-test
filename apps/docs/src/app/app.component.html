@@ -1,3 +1,8 @@
+<h2>An amazing docs site here</h2>
+
+<p>Likelihood: <input type="number" max="4" min="1" [(ngModel)]="likelihood"></p>
+<p>Impact: <input type="number" max="4" min="2" [(ngModel)]="impact"></p>
+
 <div style="width:20em">
-<impact-matrix impact="3" likelihood="3"></impact-matrix>
+<impact-matrix [impact]="impact" [likelihood]="likelihood"></impact-matrix>
 </div>
