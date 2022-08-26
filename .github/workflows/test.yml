@@ -24,10 +24,10 @@ jobs:
           cache: npm
           node-version: 16.13.2
           registry-url: https://metoffice.jfrog.io/metoffice/api/npm/npm
+      - run: |
+          npm ci --ignore-scripts
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
-        run: |
-          npm ci --ignore-scripts
       - name: Run tests
         run: |
           npx nx run-many --all --target=test
