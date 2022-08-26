@@ -18,16 +18,15 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+      - name: checkout
+        uses: actions/checkout@v3
+      - name: setup Node
+        uses: actions/setup-node@v3
         with:
           cache: npm
           node-version: 16.13.2
-          registry-url: https://metoffice.jfrog.io/metoffice/api/npm/npm
       - run: |
           npm ci --ignore-scripts
-        env:
-          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
       - name: Run tests
         run: |
           npx nx run-many --all --target=test
