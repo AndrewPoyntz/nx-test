@@ -29,17 +29,17 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       - name: Install dependencies
-          shell: bash
-          env:
-            NPM_EMAIL: ${{secrets.NPM_EMAIL}}
-            NPM_PASSWORD: ${{secrets.NPM_PASSWORD}}
-            NPM_REGISTRY: ${{secrets.NPM_REGISTRY}}
-            NPM_USER: ${{secrets.NPM_USER}}
-          run: |
-            npm install -g npm-cli-login
-            npm config set registry $NPM_REGISTRY/
-            npm-cli-login -e $NPM_EMAIL -p $NPM_PASSWORD -r $NPM_REGISTRY -u $NPM_USER
-            npm ci
+        shell: bash
+        env:
+          NPM_EMAIL: ${{secrets.NPM_EMAIL}}
+          NPM_PASSWORD: ${{secrets.NPM_PASSWORD}}
+          NPM_REGISTRY: ${{secrets.NPM_REGISTRY}}
+          NPM_USER: ${{secrets.NPM_USER}}
+        run: |
+          npm install -g npm-cli-login
+          npm config set registry $NPM_REGISTRY/
+          npm-cli-login -e $NPM_EMAIL -p $NPM_PASSWORD -r $NPM_REGISTRY -u $NPM_USER
+          npm ci
       - name: Run tests
         run: |
           npx nx run-many --all --target=test
