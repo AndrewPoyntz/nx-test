@@ -22,6 +22,10 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - env:
+        NPM_EMAIL: ${{secrets.NPM_EMAIL}}
+        NPM_PASSWORD: ${{secrets.NPM_PASSWORD}}
+        NPM_REGISTRY: ${{secrets.NPM_REGISTRY}}
       - name: Checkout
         uses: actions/checkout@v3
       - name: Install

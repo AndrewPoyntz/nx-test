@@ -20,7 +20,3 @@ runs:
           npm config set registry $NPM_REGISTRY/
           npm-cli-login -e $NPM_EMAIL -p $NPM_PASSWORD -r $NPM_REGISTRY -u $NPM_EMAIL
           npm ci
-    -   env:
-        NPM_EMAIL: ${{secrets.NPM_EMAIL}}
-        NPM_PASSWORD: ${{secrets.NPM_PASSWORD}}
-        NPM_REGISTRY: ${{secrets.NPM_REGISTRY}}
