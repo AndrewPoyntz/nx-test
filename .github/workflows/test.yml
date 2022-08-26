@@ -42,7 +42,9 @@ jobs:
           npm config set email $NPM_EMAIL
           npm config set strict-ssl $NPM_EMAIL
       - name: Install
-        run: npm ci
+        run: |
+          npm config ls -l >> $GITHUB_ENV
+          npm ci
       - name: Run tests
         run: |
           npx nx run-many --all --target=test
