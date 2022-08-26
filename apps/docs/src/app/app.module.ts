@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import {NswwsImpactMatrixAngularModule} from '@nx-test/nswws-impact-matrix-angular';
-import {defineCustomElements} from '../../../../dist/libs/nswws/impact-matrix/loader';
+import {defineCustomElements} from '../../../../dist/libs/nswws/impact-matrix/dist/loader';
 
 defineCustomElements();
 @NgModule({

@@ -10,7 +10,6 @@
   "collection:main": "./dist/collection/index.js",
   "unpkg": "./dist/nswws-imact-matrix/nswws-imact-matrix.js",
   "files": [
-    "dist/",
-    "loader/"
+    "dist/"
   ]
 }
