@@ -29,7 +29,7 @@ jobs:
       - name: Build
         run: |
           npx nx build nswws-impact-matrix
-          npx nx build
+          npx nx build --base-href /nx-test/
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
         with:
