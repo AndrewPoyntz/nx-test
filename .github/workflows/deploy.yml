@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: CI
+name: Deploy Docs site
 
 # Controls when the workflow will run
 on:
@@ -11,7 +11,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  test:
+  deploy:
     runs-on: ubuntu-latest
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
