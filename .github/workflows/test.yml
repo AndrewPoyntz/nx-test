@@ -36,10 +36,10 @@ jobs:
           NPM_REGISTRY: ${{secrets.NPM_REGISTRY}}
           NPM_USER: ${{secrets.NPM_USER}}
         run: |
-          echo $NPM_REGISTRY
-          npm install -g npm-cli-login
-          npm config set registry $NPM_REGISTRY/
-          npm-cli-login -e $NPM_EMAIL -p $NPM_PASSWORD -r $NPM_REGISTRY -u $NPM_USER
+          npm config set registry $NPM_REGISTRY
+          npm config set _auth $NPM_TOKEN
+          npm config set always-auth true
+          npm config set email $NPM_EMAIL
           npm ci
       - name: Run tests
         run: |
