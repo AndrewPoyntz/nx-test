@@ -15,9 +15,7 @@ runs:
           node-version: ${{ inputs.node-version }}
     -   name: Install dependencies
         run: |
+          npm install -g npm-cli-login
+          npm config set registry $NPM_REGISTRY/
+          npm-cli-login -e $NPM_EMAIL -p $NPM_PASSWORD -r $NPM_REGISTRY -u $NPM_EMAIL
           npm ci
-        shell: bash
-    -   name: Audit
-        run: |
-          npm audit
-        shell: bash
