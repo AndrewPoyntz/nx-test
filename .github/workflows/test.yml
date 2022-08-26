@@ -28,10 +28,6 @@ jobs:
         uses: ./.github/actions/setup
         with:
           node-version: ${{ matrix.node-version }}
-        env:
-          NPM_EMAIL: ${{secrets.NPM_EMAIL}}
-          NPM_PASSWORD: ${{secrets.NPM_PASSWORD}}
-          NPM_REGISTRY: ${{secrets.NPM_REGISTRY}}
       - name: Run tests
         run: |
           npx nx run-many --all --target=test

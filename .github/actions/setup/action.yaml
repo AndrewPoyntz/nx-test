@@ -9,10 +9,14 @@ runs:
   steps:
     -   name: Setup Node
         uses: actions/setup-node@v3
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
         with:
           cache: npm
           check-latest: true
           node-version: ${{ inputs.node-version }}
+          always-auth: true
+          registry-url: ${{secrets.NPM_REGISTRY}}
     -   name: Install dependencies
         shell: bash
         run: |
