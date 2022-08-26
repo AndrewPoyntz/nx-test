@@ -15,36 +15,19 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version:
-          - 16.13.2
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - name: Checkout
-        uses: actions/checkout@v3
-      - name: Setup Node
-        uses: ./.github/actions/setup
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
         with:
-          node-version: ${{ matrix.node-version }}
-      - name: configure node
-        shell: bash
+          cache: npm
+          node-version: 16.13.2
+          registry-url: https://metoffice.jfrog.io/metoffice/api/npm/npm
         env:
-          NPM_EMAIL: ${{secrets.NPM_EMAIL}}
-          NPM_PASSWORD: ${{secrets.NPM_PASSWORD}}
-          NPM_REGISTRY: ${{secrets.NPM_REGISTRY}}
-          NPM_USER: ${{secrets.NPM_USER}}
+          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
         run: |
-          npm config set registry $NPM_REGISTRY
-          npm config set _auth $NPM_TOKEN
-          npm config set always-auth true
-          npm config set email $NPM_EMAIL
-          npm config set strict-ssl $NPM_EMAIL
-      - name: Install
-        run: |
-          npm config ls -l >> $GITHUB_ENV
-          npm ci
+          npm ci --ignore-scripts
       - name: Run tests
         run: |
           npx nx run-many --all --target=test

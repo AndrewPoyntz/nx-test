@@ -12,5 +12,6 @@ runs:
         with:
           cache: npm
           check-latest: true
-          node-version: ${{ inputs.node-version }}
+          node-version: 16.13.2
+          registry-url: https://metoffice.jfrog.io/metoffice/api/npm/npm
 
