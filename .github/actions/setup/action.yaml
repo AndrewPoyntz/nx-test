@@ -9,18 +9,20 @@ runs:
   steps:
     -   name: Setup Node
         uses: actions/setup-node@v3
-        env:
-          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
         with:
           cache: npm
           check-latest: true
           node-version: ${{ inputs.node-version }}
           always-auth: true
-          registry-url: ${{secrets.NPM_REGISTRY}}
     -   name: Install dependencies
         shell: bash
+        env:
+          NPM_EMAIL: ${{secrets.NPM_EMAIL}}
+          NPM_PASSWORD: ${{secrets.NPM_PASSWORD}}
+          NPM_REGISTRY: ${{secrets.NPM_REGISTRY}}
+          NPM_USER: ${{secrets.NPM_USER}}
         run: |
           npm install -g npm-cli-login
           npm config set registry $NPM_REGISTRY/
-          npm-cli-login -e $NPM_EMAIL -p $NPM_PASSWORD -r $NPM_REGISTRY -u $NPM_EMAIL
+          npm-cli-login -e $NPM_EMAIL -p $NPM_PASSWORD -r $NPM_REGISTRY -u $NPM_USER
           npm ci
