@@ -28,7 +28,7 @@ jobs:
         uses: ./.github/actions/setup
         with:
           node-version: ${{ matrix.node-version }}
-      - name: Install dependencies
+      - name: configure node
         shell: bash
         env:
           NPM_EMAIL: ${{secrets.NPM_EMAIL}}
@@ -40,7 +40,9 @@ jobs:
           npm config set _auth $NPM_TOKEN
           npm config set always-auth true
           npm config set email $NPM_EMAIL
-          npm ci
+          npm config set strict-ssl $NPM_EMAIL
+      - name: Install
+        run: npm ci
       - name: Run tests
         run: |
           npx nx run-many --all --target=test
