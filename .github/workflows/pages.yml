@@ -36,8 +36,16 @@ jobs:
           cache: npm
           node-version: 16.13.2
       - name: Install
+        env:
+          NPM_EMAIL: ${{secrets.NPM_EMAIL}}
+          NPM_PASSWORD: ${{secrets.NPM_PASSWORD}}
+          NPM_REGISTRY: ${{secrets.NPM_REGISTRY}}
+          NPM_USER: ${{secrets.NPM_USER}}
         run: |
-          npm ci --ignore-scripts
+          npm install -g npm-cli-login
+          npm config set registry $NPM_REGISTRY/
+          npm-cli-login -e $NPM_EMAIL -p $NPM_PASSWORD -r $NPM_REGISTRY -u $NPM_USER
+          npm i
       - name: Build
         run: |
           npx nx build nswws-impact-matrix
